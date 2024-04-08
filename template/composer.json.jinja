@@ -1,0 +1,44 @@
+{
+    "name": "{{ project_vendor }}/{{ project_name }}",
+    "description": "{{ project_description }}",
+    "keywords": ["{{ project_keywords.split(',')|join('", "') }}"],
+    "type": "{{ project_type }}",
+    "prefer-stable": {{ composer_prefer_stable | lower }},
+    "license": "{{ copyright_license }}",
+    "readme": "https://github.com/{{ vcs_github_path }}/blob/main/README.md",
+    "homepage": "https://github.com/{{ vcs_github_path }}",
+    "support": {
+        "issues": "https://github.com/{{ vcs_github_path }}/issues",
+        "security": "https://github.com/{{ vcs_github_path }}/security/policy"
+    },
+    "authors": [
+        {
+            "name": "{{ copyright_holder_name }}",
+            "email": "{{ copyright_holder_email }}"
+        }
+    ],
+    "scripts": {
+        "analyse": "./vendor/bin/phpstan analyse",
+        "test": "./vendor/bin/phpunit",
+        "lint": "./vendor/bin/phpcs --standard=psr2 src"
+    },
+    "require": {
+        "php": "{{ php_version }}"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.24",
+        "phpstan/phpstan": "^2.1.0",
+        "phpunit/phpunit": "^10.5.38",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "{{ project_namespace.replace('\\', '\\\\') }}\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "{{ project_namespace.replace('\\', '\\\\') }}\\tests\\": "./tests/"
+        }
+    }
+}

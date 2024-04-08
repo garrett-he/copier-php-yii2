@@ -1,0 +1,10 @@
+---
+php_version:
+  type: str
+  help: "PHP version to use:"
+  default: ">=8.2"
+
+composer_prefer_stable:
+  type: bool
+  help: "Prefer stable packages for composer:"
+  default: True
