@@ -1,0 +1,9 @@
+<?php
+return array_replace_recursive(
+    require(APP_HOME . '/config/main.php'),
+    [
+        'id' => '{{ project_name }}-console',
+        'basePath' => APP_HOME . '/src/',
+        'controllerNamespace' => '{{ project_namespace }}\commands'
+    ]
+);
