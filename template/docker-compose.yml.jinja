@@ -1,0 +1,26 @@
+services:
+  app:
+    container_name: {{ project_name }}-app
+    build:
+      context: .
+    environment:
+      - PHP_ENV=${PHP_ENV}
+      {% if with_db in ['mysql', 'pgsql'] %}
+      - APP_DB_HOST=${APP_DB_HOST}
+      - APP_DB_USER=${APP_DB_USER}
+      - APP_DB_PASSWORD=${APP_DB_PASSWORD}
+      - APP_DB_NAME=${APP_DB_NAME}
+      {% endif %}
+    volumes:
+      - .:/app
+
+  http:
+    container_name: {{ project_name }}-http
+    image: nginx:alpine
+    ports:
+      - "{{ docker_port }}:80"
+    volumes:
+      - .:/app
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - app

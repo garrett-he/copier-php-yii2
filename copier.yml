@@ -14,4 +14,7 @@
   !include copier/questions/php.yml
 
 ---
+  !include copier/questions/docker.yml
+
+---
   !include copier/questions/features.yml
