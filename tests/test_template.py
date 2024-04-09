@@ -31,6 +31,7 @@ def generate_copier_answers():
         'vcs_github_path': f'{chance.word()}/{chance.word()}-{chance.word()}'.lower(),
         'php_version': chance.pickone(['>=8.1', '>=8.2']),
         'composer_prefer_stable': chance.pickone([True, False]),
+        'with_db': chance.pickone(['none', 'sqlite', 'mysql', 'pgsql']),
     }
 
 

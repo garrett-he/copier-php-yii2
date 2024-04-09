@@ -1,0 +1,10 @@
+---
+with_db:
+  type: str
+  help: "Database to use:"
+  default: none
+  choices:
+    - none
+    - mysql
+    - pgsql
+    - sqlite
