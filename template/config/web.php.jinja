@@ -1,0 +1,16 @@
+<?php
+return array_replace_recursive(
+    require(APP_HOME . '/config/main.php'),
+    [
+        'id' => '{{ project_name }}-web',
+        'basePath' => APP_HOME . '/src/',
+        'controllerNamespace' => '{{ project_namespace }}\controllers',
+        'components' => [
+            'urlManager' => [
+                'enablePrettyUrl' => true,
+                'enableStrictParsing' => false,
+                'showScriptName' => false
+            ]
+        ]
+    ]
+);
