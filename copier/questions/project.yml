@@ -46,13 +46,3 @@ project_version:
 project_keywords:
   type: str
   help: "Keywords of this project:"
-
-project_type:
-  type: str
-  help: "Type of this project:"
-  default: "library"
-  choices:
-    - library
-    - project
-    - metapackage
-    - composer-plugin

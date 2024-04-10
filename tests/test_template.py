@@ -23,7 +23,6 @@ def generate_copier_answers():
         'project_description': chance.sentence(),
         'project_version': f'{random.randint(0, 10)}.{random.randint(0, 10)}.{random.randint(0, 10)}',
         'project_keywords': f'{chance.word()},{chance.word()},{chance.word()}',
-        'project_type': chance.pickone(['library', 'project', 'metapackage', 'composer-plugin']),
         'copyright_holder_name': chance.name(),
         'copyright_holder_email': chance.email(),
         'copyright_license': chance.pickone(list(LICENSE_SPEC.keys())),
@@ -104,7 +103,6 @@ def test_template_composer_json(copie: Copie):
     assert composer['name'] == f'{answers["project_vendor"]}/{answers["project_name"]}'
     assert composer['description'] == answers['project_description']
     assert composer['keywords'] == answers['project_keywords'].split(',')
-    assert composer['type'] == answers['project_type']
     assert composer['prefer-stable'] == answers['composer_prefer_stable']
     assert composer['license'] == answers['copyright_license']
     assert composer['homepage'] == f'https://github.com/{answers["vcs_github_path"]}'

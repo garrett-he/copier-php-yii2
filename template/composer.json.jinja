@@ -2,7 +2,7 @@
     "name": "{{ project_vendor }}/{{ project_name }}",
     "description": "{{ project_description }}",
     "keywords": ["{{ project_keywords.split(',')|join('", "') }}"],
-    "type": "{{ project_type }}",
+    "type": "project",
     "prefer-stable": {{ composer_prefer_stable | lower }},
     "license": "{{ copyright_license }}",
     "readme": "https://github.com/{{ vcs_github_path }}/blob/main/README.md",
