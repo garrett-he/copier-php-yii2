@@ -3,7 +3,7 @@
 ![license](https://img.shields.io/github/license/garrett-he/copier-php-yii2)
 ![build](https://img.shields.io/github/actions/workflow/status/garrett-he/copier-php-yii2/test.yml)
 
-A [Copier][1] template for PHP projects.
+A [Copier][1] template for PHP projects with [Yii2][2] framework.
 
 ## Quickstart
 
@@ -24,3 +24,5 @@ Copyright (C) 2024 Garrett HE <garrett.he@outlook.com>
 The BSD 3-Clause License, see [LICENSE](./LICENSE).
 
 [1]: https://github.com/copier-org/copier
+
+[2]: https://www.yiiframework.com/
